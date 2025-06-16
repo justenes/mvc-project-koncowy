@@ -1,0 +1,23 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <a class="nav-brand" href="/">
+      🍹 <span>Koktajle</span>
+    </a>
+
+    <div class="nav-links">
+      <% if (userId) { %>
+        <a href="/profile" class="nav-btn">
+          👤 <span>Profil</span>
+        </a>
+        <form action="/logout" method="POST" class="nav-form">
+          <button type="submit" class="nav-btn">
+            🚪 <span>Wyloguj się</span>
+          </button>
+        </form>
+      <% } else { %>
+        <a href="/login" class="nav-btn">🔐 Login</a>
+        <a href="/register" class="nav-btn">📝 Rejestracja</a>
+      <% } %>
+    </div>
+  </div>
+</nav>

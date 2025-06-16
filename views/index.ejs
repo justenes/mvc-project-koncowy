@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Moje koktajle</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <%- include('partials/header') %>
+
+  <div class="main-page">
+    <h1 class="page-title">🍹 Moje ulubione koktajle</h1>
+
+    <div class="add-btn-wrapper">
+      <a href="/add" class="add-btn">➕ Dodaj nowy przepis</a>
+    </div>
+
+    <div class="category-filters">
+      <span class="filter-label">Filtruj według kategorii:</span>
+      <a href="/" class="filter-btn">Wszystkie</a>
+      <a href="/category/owocowy" class="filter-btn">Owocowy</a>
+      <a href="/category/alkoholowy" class="filter-btn">Alkoholowy</a>
+      <a href="/category/bezalkoholowy" class="filter-btn">Bezalkoholowy</a>
+    </div>
+
+    <div class="cocktail-grid">
+      <% cocktails.forEach(cocktail => { %>
+        <div class="cocktail-card">
+          <% if (cocktail.image) { %>
+            <img src="/uploads/<%= cocktail.image %>" class="cocktail-img" alt="cocktail image">
+          <% } %>
+          <div class="cocktail-details">
+            <h4><%= cocktail.name %></h4>
+            <p><strong>Składniki:</strong> <%= cocktail.ingredients %></p>
+            <p><strong>Instrukcje:</strong> <%= cocktail.instructions %></p>
+            <p><strong>Kategoria:</strong> <%= cocktail.category %></p>
+            <p><strong>Ocena:</strong> <%= cocktail.rating %>/5</p>
+
+            <div class="cocktail-author">
+              <img src="/uploads/avatars/<%= cocktail.author?.avatar || 'default.png' %>" class="avatar-sm" alt="avatar">
+              <small>Dodane przez: <%= cocktail.author?.username || "Nieznany" %></small>
+            </div>
+          </div>
+          <div class="action-buttons">
+            <a href="/edit/<%= cocktail._id %>" class="edit-btn">✏️ Edytuj</a>
+            <form action="/delete/<%= cocktail._id %>?_method=DELETE" method="POST">
+              <button type="submit" class="delete-btn">🗑️ Usuń</button>
+            </form>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+
+</body>
+</html>

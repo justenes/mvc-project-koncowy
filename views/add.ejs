@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dodaj przepis</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="add-page">
+    <h1 class="add-title">➕ Dodaj nowy przepis na koktajl</h1>
+
+    <form action="/add" method="POST" enctype="multipart/form-data" class="add-form">
+      <div class="form-group">
+        <label for="name">Nazwa koktajlu</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="ingredients">Składniki</label>
+        <textarea id="ingredients" name="ingredients" rows="3" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="instructions">Instrukcje</label>
+        <textarea id="instructions" name="instructions" rows="3" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="category">Kategoria</label>
+        <select id="category" name="category" required>
+          <option value="owocowy">Owocowy</option>
+          <option value="alkoholowy">Alkoholowy</option>
+          <option value="bezalkoholowy">Bezalkoholowy</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="rating">Ocena (1-5)</label>
+        <input type="number" id="rating" name="rating" min="1" max="5" required />
+      </div>
+
+      <div class="form-group">
+        <label for="image">Wybierz zdjęcie (foto yükle)</label>
+        <input type="file" id="image" name="image" accept="image/*" />
+      </div>
+
+      <button type="submit" class="submit-btn">💾 Zapisz przepis</button>
+    </form>
+
+    <div class="back-btn-wrapper">
+      <a href="/" class="back-btn">⬅️ Powrót do listy koktajli</a>
+    </div>
+  </div>
+</body>
+</html>

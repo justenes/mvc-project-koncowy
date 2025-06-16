@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Edytuj przepis</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="edit-page">
+    <h1 class="edit-title">✏️ Edytuj przepis: <%= cocktail.name %></h1>
+
+    <form action="/edit/<%= cocktail._id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="edit-form">
+      <div class="form-group">
+        <label for="name">Nazwa koktajlu</label>
+        <input type="text" id="name" name="name" value="<%= cocktail.name %>" required />
+      </div>
+
+      <div class="form-group">
+        <label for="ingredients">Składniki</label>
+        <textarea id="ingredients" name="ingredients" rows="3" required><%= cocktail.ingredients %></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="instructions">Instrukcje</label>
+        <textarea id="instructions" name="instructions" rows="3" required><%= cocktail.instructions %></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="category">Kategoria</label>
+        <select id="category" name="category" required>
+          <option value="owocowy" <%= cocktail.category === "owocowy" ? "selected" : "" %>>Owocowy</option>
+          <option value="alkoholowy" <%= cocktail.category === "alkoholowy" ? "selected" : "" %>>Alkoholowy</option>
+          <option value="bezalkoholowy" <%= cocktail.category === "bezalkoholowy" ? "selected" : "" %>>Bezalkoholowy</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="rating">Ocena (1-5)</label>
+        <input type="number" id="rating" name="rating" min="1" max="5" value="<%= cocktail.rating %>" required />
+      </div>
+
+      <div class="form-group">
+        <label for="image">Nowe zdjęcie (isteğe opcjonalne)</label>
+        <input type="file" id="image" name="image" accept="image/*" />
+      </div>
+
+      <button type="submit" class="submit-btn">💾 Zapisz zmiany</button>
+    </form>
+
+    <div class="back-btn-wrapper">
+      <a href="/" class="back-btn">⬅️ Powrót do listy koktajli</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Profil użytkownika</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <div class="profile-page">
+    <h1 class="profile-title">👤 Profil użytkownika</h1>
+
+    <div class="profile-info">
+      <% if (user.avatar) { %>
+        <img src="/uploads/avatars/<%= user.avatar %>" class="avatar-lg" alt="Profil Resmi">
+      <% } else { %>
+        <div class="no-avatar">🧑 (Brak zdjęcia profilowego)</div>
+      <% } %>
+      
+      <h3>Witaj, <%= user.username %>!</h3>
+      <p>Oto Twoje koktajle:</p>
+    </div>
+
+    <div class="cocktail-grid">
+      <% cocktails.forEach(cocktail => { %>
+        <div class="cocktail-card">
+          <% if (cocktail.image) { %>
+            <img src="/uploads/<%= cocktail.image %>" class="cocktail-img" alt="cocktail image">
+          <% } %>
+          <div class="cocktail-details">
+            <h4><%= cocktail.name %></h4>
+            <p><strong>Kategoria:</strong> <%= cocktail.category %></p>
+            <p><strong>Ocena:</strong> <%= cocktail.rating %>/5</p>
+            <p><strong>Składniki:</strong> <%= cocktail.ingredients %></p>
+            <p><strong>Instrukcje:</strong> <%= cocktail.instructions %></p>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+
+    <div class="back-btn-wrapper">
+      <a href="/cocktails" class="back-btn">⬅️ Powrót</a>
+    </div>
+  </div>
+</body>
+</html>

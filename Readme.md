@@ -87,9 +87,13 @@ mvc-project-koncowy/
 - Skonfiguruj połączenie z MongoDB (możesz użyć lokalnej instancji lub MongoDB Atlas)
 
 3. Utwórz plik .env:
-- (Dane dostępowe zawarte w pliku .env zostały przygotowane wyłącznie do celów testowych.
-Połączenie z bazą MongoDB (MONGO_URI) działa w trybie testowym i umożliwia zapis oraz edycję danych w ramach konta testowego.)
-
+- Plik .env nie został dołączony do repozytorium. Proszę utworzyć go samodzielnie i uzupełnić danymi dostępowymi do swojej bazy MongoDB.
+# Przykład
+PORT=3000
+MONGO_URI=mongodb://localhost:27017/cocktailDB
+SESSION_SECRET=TestowyKod
+- Jeśli chcesz użyć lokalnej bazy, możesz wpisać:
+MONGO_URI=mongodb://localhost:27017/nazwaBazy
 
 4. Uruchom aplikację:
 - npm start

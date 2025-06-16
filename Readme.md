@@ -94,12 +94,15 @@ mvc-project-koncowy/
 # Przykład
 ```env
 PORT=3000
-MONGO_URI=mongodb://localhost:27017/cocktailDB
+MONGO_URI=mongodb://localhost:27017/cocktailDB_testing
 SESSION_SECRET=TestowyKod
 
 // Jeśli chcesz użyć lokalnej bazy, możesz wpisać:
 MONGO_URI=mongodb://localhost:27017/nazwaBazy
 ```
+## Uwaga:
+
+Aby uruchomić aplikację, proszę utworzyć plik .env z własnymi danymi dostępowymi do MongoDB (może być lokalny mongodb://localhost:27017/cocktailDB_testing). Po uruchomieniu aplikacji, można zarejestrować konto i dodać własne dane testowe.
 
 
 4. Uruchom aplikację:

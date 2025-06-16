@@ -40,5 +40,4 @@ Aplikacja „Kolekcja ulubionych przepisów do koktajli” została stworzona ja
 
 ### 👤 Profil użytkownika
 ![Profil](./public/screens/profile1.png)
-![Profil](./public/screens/profile1.png)
 

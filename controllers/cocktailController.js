@@ -68,6 +68,6 @@ exports.deleteCocktail = async (req, res) => {
 
 // filtreleme
 exports.filterByCategory = async (req, res) => {
-  const cocktails = await Cocktail.find({ category: req.params.category });
+  const cocktails = await Cocktail.find({ category: req.params.category }).populate('author');
   res.render('index', { cocktails });
 };

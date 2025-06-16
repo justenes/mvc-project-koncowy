@@ -1,23 +1,44 @@
-#  Koktajle – Aplikacja webowa w Node.js (MVC + SSR)
+###  Kolekcja ulubionych przepisów do koktajli
 
-# Opis
-Prosta aplikacja internetowa umożliwiająca użytkownikom dodawanie, edytowanie i przeglądanie przepisów na koktajle. Projekt wykorzystuje architekturę MVC oraz renderowanie po stronie serwera (Server-Side Rendering) za pomocą silnika EJS.
+#  Opis projektu
 
-# Funkcjonalności
+Aplikacja „Kolekcja ulubionych przepisów do koktajli” została stworzona jako projekt zaliczeniowy z przedmiotu dotyczącego tworzenia aplikacji internetowych z wykorzystaniem Node.js oraz wzorca architektonicznego MVC. Umożliwia użytkownikom tworzenie i przeglądanie przepisów na koktajle oraz zarządzanie swoim profilem.
 
-Rejestracja i logowanie użytkowników
-Przesyłanie zdjęcia profilowego
-Dodawanie i usuwanie koktajli
-Edycja przepisów
-Filtrowanie według kategorii (owocowy, alkoholowy, bezalkoholowy)
-Strona profilu użytkownika z jego koktajlami
+## ✅ Funkcjonalności
 
-# Uruchamianie projektu
+- Rejestracja użytkownika z możliwością dodania awatara
+- Logowanie i wylogowywanie
+- Dodawanie przepisów koktajlowych (tytuł, opis, składniki, zdjęcie)
+- Edytowanie i usuwanie własnych przepisów
+- Przeglądanie wszystkich przepisów w galerii
+- Strona profilu z listą przepisów danego użytkownika
+- Estetyczny interfejs (własne stylowanie CSS)
+- Obsługa sesji i autoryzacji
 
-## Kroki:
+## 🖼️ Zrzuty ekranu
 
-```bash
-git clone https://github.com/justenes/Projekt-Koncowy-
-cd Projekt-Koncowy-
-npm install
-npm start
+### 🔐 Logowanie
+![Logowanie](./public/screens/login.png)
+
+### 📝 Rejestracja
+![Rejestracja](./public/screens/register.png)
+
+###  HomePage
+![Home_page](./public/screens/homepage1.png)
+
+### 🍹 Koktejle
+![koktejle](./public/screens/homepage.png)
+
+### 🍹 Koktejle alkoholowy
+![koktejle](./public/screens/alko.png)
+
+### 🍹 Koktejle bezalkoholowy
+![koktejle](./public/screens/bezalko.png)
+
+### 🍹 Koktejle owocowy
+![koktejle](./public/screens/owoc.png)
+
+### 👤 Profil użytkownika
+![Profil](./public/screens/profile1.png)
+![Profil](./public/screens/profile1.png)
+

@@ -90,8 +90,6 @@ mvc-project-koncowy/
 - (Dane dostępowe zawarte w pliku .env zostały przygotowane wyłącznie do celów testowych.
 Połączenie z bazą MongoDB (MONGO_URI) działa w trybie testowym i umożliwia zapis oraz edycję danych w ramach konta testowego.)
 
-MONGO_URI=mongodb+srv://deneme:deneme@cluster0.j7wvfuc.mongodb.net/cocktailDB?retryWrites=true&w=majority&appName=Cluster0
-SESSION_SECRET=supergizliyanankilit
 
 4. Uruchom aplikację:
 - npm start

@@ -64,15 +64,18 @@ Na zdrowie! 🥂
 
 ### Struktura aplikacji
 
+```
 mvc-project-koncowy/
 │
-├── models/ # Schematy Mongoose (Cocktail, User)
-├── routes/ # Trasy (cocktailRoutes.js, userRoutes.js)
-├── controllers/ # Logika kontrolerów (cocktailController.js, userController.js)
-├── views/ # Widoki EJS (index.ejs, register.ejs, login.ejs, profile.ejs, itd.)
-├── public/ # Pliki statyczne (style.css, uploads/, screens/)
-├── app.js # Plik główny serwera
-└── .env # Zmienne środowiskowe
+├── models/         # Schematy Mongoose (Cocktail, User)
+├── routes/         # Trasy (cocktailRoutes.js, userRoutes.js)
+├── controllers/    # Logika kontrolerów (cocktailController.js, userController.js)
+├── views/          # Widoki EJS (index.ejs, register.ejs, login.ejs, profile.ejs, itd.)
+├── public/         # Pliki statyczne (style.css, uploads/, screens/)
+├── app.js          # Plik główny serwera
+└── .env            # Zmienne środowiskowe
+```
+
 
 ⚙️ Instalacja i uruchomienie
 
@@ -89,11 +92,15 @@ mvc-project-koncowy/
 3. Utwórz plik .env:
 - Plik .env nie został dołączony do repozytorium. Proszę utworzyć go samodzielnie i uzupełnić danymi dostępowymi do swojej bazy MongoDB.
 # Przykład
+```env
 PORT=3000
 MONGO_URI=mongodb://localhost:27017/cocktailDB
 SESSION_SECRET=TestowyKod
-- Jeśli chcesz użyć lokalnej bazy, możesz wpisać:
+
+// Jeśli chcesz użyć lokalnej bazy, możesz wpisać:
 MONGO_URI=mongodb://localhost:27017/nazwaBazy
+```
+
 
 4. Uruchom aplikację:
 - npm start

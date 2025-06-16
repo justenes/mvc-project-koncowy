@@ -7,21 +7,25 @@ const cocktailRoutes = require('./routes/cocktailRoutes');
 const userRoutes = require('./routes/userRoutes');
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 console.log("starting...");
 
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
 .then(() => {
-  console.log('Succesfully connected');
-  app.listen(3000, () => {
-    console.log('http://localhost:3000 it works');
+  console.log('Successfully connected to MongoDB');
+  app.listen(PORT, () => {
+    console.log(`Server is running at http://localhost:${PORT}`);
   });
 })
 .catch(err => {
-  console.error('Connecting error', err.message);
+  console.error('Connecting error:', err.message);
 });
 
-//express ayarlari
+// Express ayarları
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
@@ -39,6 +43,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use('/uploads', express.static('public/uploads'));
 
-// rotalar
+// Rotalar
 app.use('/', userRoutes);
 app.use('/', cocktailRoutes);
